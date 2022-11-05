@@ -11,14 +11,14 @@ import javax.imageio.ImageIO;
 
 public class GraphDisplay extends JPanel implements MouseMotionListener
 {
-    GeometricObject[] gArray; //geometric objects
+    Rectangle[] gArray; //geometric objects
     private BufferedImage image; //background image
     String description; //description of map element
     
     /**
      * Parameterized constructor.
      */
-    public GraphDisplay(int frameWidth, int frameHeight, GeometricObject[] g)
+    public GraphDisplay(int frameWidth, int frameHeight, Rectangle[] g)
     {
         gArray = g;
         description = "";
@@ -56,15 +56,21 @@ public class GraphDisplay extends JPanel implements MouseMotionListener
         int x = e.getPoint().x;
         int y = e.getPoint().y;
         Point p = new Point(e.getPoint().x, e.getPoint().y);
-               
-        ////////////////////////////////////////////////////////////////////////
-        //DUMMY code (replace with code implementing solution to the assignment)
-        if (p.getX() < 100) description = "West of Campus";
-        else
-            if (p.getX() > 350) description = "East of Campus";
-            else description = "";
-        ////////////////////////////////////////////////////////////////////////
-        
+
+        if (gArray[0].isPointInRectangle(p)) description = gArray[0].getContinent();
+        else if (gArray[1].isPointInRectangle(p)) description = gArray[1].getContinent();
+        else if (gArray[2].isPointInRectangle(p)) description = gArray[2].getContinent();
+        else if (gArray[3].isPointInRectangle(p)) description = gArray[3].getContinent();
+        else if (gArray[4].isPointInRectangle(p)) description = gArray[4].getContinent();
+        else description = "";
+
+//            ////////////////////////////////////////////////////////////////////////
+//            //DUMMY code (replace with code implementing solution to the assignment)
+//            if (p.getX() < 100) description = "West of Campus";
+//            else
+//            if (p.getX() > 350) description = "East of Campus";
+//            else description = "";
+//            ////////////////////////////////////////////////////////////////////////
         repaint();
     }
     
