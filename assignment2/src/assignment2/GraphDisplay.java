@@ -29,7 +29,7 @@ public class GraphDisplay extends JPanel implements MouseMotionListener
         //opens/read image file
         try
         {
-            image = ImageIO.read(new File("C:\\Users\\asale038\\eclipse-workspace\\assignment2\\src\\assignment2\\Lower Manhattan Map.png"));
+            image = ImageIO.read(new File("/Users/albertosales/classes/compGeoProject2/assignment2/src/assignment2/world map.jpeg"));
         }
         catch (IOException ex)
         {
