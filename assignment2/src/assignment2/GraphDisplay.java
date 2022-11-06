@@ -62,15 +62,9 @@ public class GraphDisplay extends JPanel implements MouseMotionListener
         else if (gArray[2].isPointInRectangle(p)) description = gArray[2].getContinent();
         else if (gArray[3].isPointInRectangle(p)) description = gArray[3].getContinent();
         else if (gArray[4].isPointInRectangle(p)) description = gArray[4].getContinent();
+        else if (gArray[5].isPointInRectangle(p)) description = gArray[5].getContinent();
         else description = "";
 
-//            ////////////////////////////////////////////////////////////////////////
-//            //DUMMY code (replace with code implementing solution to the assignment)
-//            if (p.getX() < 100) description = "West of Campus";
-//            else
-//            if (p.getX() > 350) description = "East of Campus";
-//            else description = "";
-//            ////////////////////////////////////////////////////////////////////////
         repaint();
     }
     

@@ -22,18 +22,10 @@ public class Project2Framework
                 new Rectangle(new Point(180, 726), new Point(582, 737), "Antarctica"),
                 new Rectangle(new Point(305, 407), new Point(465, 624), "Africa/Middle-East"),
                 new Rectangle(new Point(561, 550), new Point(705, 680), "Australia"),
-                new Rectangle(new Point(305, 250), new Point(428, 400), "Europe")
+                new Rectangle(new Point(305, 250), new Point(428, 400), "Europe"),
+                new Rectangle(new Point(10, 36), new Point(297, 474), "North America")
 
         };
-
-        for (Rectangle r:g
-             ) {
-            System.out.println(r.toString());
-        }
-        
-        ////////////////////////////////////////////////////////////////////////
-        //populate g with geometric objects
-        ////////////////////////////////////////////////////////////////////////        
         
         //graphing
         FrameDisplay frame = new FrameDisplay(g);
