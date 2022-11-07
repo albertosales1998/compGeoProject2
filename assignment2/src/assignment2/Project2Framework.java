@@ -15,20 +15,47 @@ public class Project2Framework
     }
     
     public Project2Framework()
-    {        
-        //Defining the geometric objects that represent the problem data
-        Rectangle[] g = new Rectangle[]{
-                new Rectangle(new Point(167, 482), new Point(302, 711), "South America"),
-                new Rectangle(new Point(180, 726), new Point(582, 737), "Antarctica"),
-                new Rectangle(new Point(305, 407), new Point(465, 624), "Africa/Middle-East"),
-                new Rectangle(new Point(561, 550), new Point(705, 680), "Australia"),
-                new Rectangle(new Point(305, 250), new Point(428, 400), "Europe"),
-                new Rectangle(new Point(10, 36), new Point(297, 474), "North America")
-
+    {
+        GeometricObject[] mapElements = new GeometricObject[]{
+                new Polygon(
+                        new Point[]{
+                                new Point(34, 339),
+                                new Point(294, 45),
+                                new Point(310, 151),
+                                new Point(192, 477)},
+                        "North America"),
+                new Polygon(
+                        new Point[]{
+                                new Point(216, 483),
+                                new Point(287, 535),
+                                new Point(224, 701),
+                                new Point(183, 516)},
+                        "South America"),
+                new Polygon(
+                        new Point[]{
+                                new Point(385, 398),
+                                new Point(334, 344),
+                                new Point(391, 110),
+                                new Point(430, 357)},
+                        "Europe"),
+                new Polygon(
+                        new Point[]{
+                                new Point(364, 408),
+                                new Point(451, 484),
+                                new Point(399, 619),
+                                new Point(323, 467)},
+                        "Africa/Middle-East"),
+                new Polygon(
+                        new Point[]{
+                                new Point(608, 547),
+                                new Point(696, 564),
+                                new Point(674, 668),
+                                new Point(569, 596)},
+                        "Australia"),
         };
         
         //graphing
-        FrameDisplay frame = new FrameDisplay(g);
+        FrameDisplay frame = new FrameDisplay(mapElements);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }

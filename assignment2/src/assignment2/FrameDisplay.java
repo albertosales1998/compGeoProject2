@@ -14,7 +14,7 @@ public class FrameDisplay extends JFrame
      *
      * @param g geometric objects to be depicted in this frame
      */
-    public FrameDisplay(Rectangle[] g)
+    public FrameDisplay(GeometricObject[] g)
     {
         setTitle("Interactive Map");
         setSize(WIDTH, HEIGHT);

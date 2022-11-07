@@ -11,16 +11,16 @@ import javax.imageio.ImageIO;
 
 public class GraphDisplay extends JPanel implements MouseMotionListener
 {
-    Rectangle[] gArray; //geometric objects
+    GeometricObject[] pArray; //geometric objects
     private BufferedImage image; //background image
     String description; //description of map element
     
     /**
      * Parameterized constructor.
      */
-    public GraphDisplay(int frameWidth, int frameHeight, Rectangle[] g)
+    public GraphDisplay(int frameWidth, int frameHeight, GeometricObject[] g)
     {
-        gArray = g;
+        pArray = g;
         description = "";
         Dimension d = new Dimension(frameWidth, frameHeight);
         setPreferredSize(d); //sets the preferred size of this panel
@@ -57,14 +57,12 @@ public class GraphDisplay extends JPanel implements MouseMotionListener
         int y = e.getPoint().y;
         Point p = new Point(e.getPoint().x, e.getPoint().y);
 
-        if (gArray[0].isPointInRectangle(p)) description = gArray[0].getContinent();
-        else if (gArray[1].isPointInRectangle(p)) description = gArray[1].getContinent();
-        else if (gArray[2].isPointInRectangle(p)) description = gArray[2].getContinent();
-        else if (gArray[3].isPointInRectangle(p)) description = gArray[3].getContinent();
-        else if (gArray[4].isPointInRectangle(p)) description = gArray[4].getContinent();
-        else if (gArray[5].isPointInRectangle(p)) description = gArray[5].getContinent();
-        else description = "";
-
+        int i = Algorithms.isPointInSet(pArray, p);
+        if (i == -1) description = "";
+        else {
+            Polygon poly = (Polygon)pArray[i];
+            description = poly.getMapElement();
+        }
         repaint();
     }
     
